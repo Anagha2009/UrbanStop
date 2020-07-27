@@ -12,7 +12,7 @@ class SidePanel extends Component {
         }
       profitLossCalc=(x,y)=>{
             let pl=x - Number(y);
-            return pl.toFixed(2);
+            return pl.toFixed(0);
         }
       returnCalc=(x,y)=>{
           let ret= (x*100)/y;
@@ -28,19 +28,19 @@ class SidePanel extends Component {
                 const returnValue=this.returnCalc(profitloss,info.investedAmount)
 
                 return(
-                    <div className="container-fluid" key={info.scrip}>
+                    <div key={info.scrip}>
                     <div className="row">
                         <div className="col-lg-2">
                          <div className="card">
                            <div className="row">
-                               <div className="col">
-                                    <i className="fas fa-bars" style={{marginTop:"30px"}}></i>
+                               <div className="col-1  style-col">
+                                    <i className="fas fa-bars" style={{marginTop:"30px",marginLeft:"20px"}}></i>
                                     </div>
-                                    <div className="col-4" style={{marginTop:'15px'}}>
+                                    <div className="col-4 style-col" style={{marginTop:'15px'}}>
                                          <span id="scrip" >{info.scrip} </span><br/> <span id="price">${info.price}</span>
                                   </div>
                              
-                            <div className="col-6">
+                            <div className="col-6 style-col">
                                 <p>
                                     <span id="span1">iShares</span> <br/><span id="span2" className="text-center">by BlackDoc</span> <br/><span id="span3">S&P 500 index</span><br/><span id="span4">US equity</span>
                                 </p>
@@ -65,7 +65,7 @@ class SidePanel extends Component {
                                <div className="col-4" style={{textAlign:'right'}}>
                                <strong>{info.quantity}</strong><br/>
                                <strong>${this.averageCalc(info.investedAmount,info.quantity)}</strong><br/>
-                               <strong>${info.investedAmount}</strong>
+                               <strong style={{whiteSpace:"nowrap"}}>${info.investedAmount}</strong>
                                </div>
                                </div>
                        </div>

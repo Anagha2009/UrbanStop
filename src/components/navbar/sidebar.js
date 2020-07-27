@@ -12,14 +12,15 @@ import { fillData } from '../store/reducers/actions/dataActions';
                 <option selected>Select...</option>
                 {props.options.map(option=>{
                     return(
-                    <option name={option.scrip} onSelect={props.fillData(option.scrip)}>{option.scrip}</option>
+                    <option name={option.scrip} onClick={()=>props.fillData(option.scrip)}>{option.scrip}</option>
                     )
                 })}
             </select>
          <div className="form-group">
             <label for="formGroupExampleInput"></label>
-            
-            <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Price" value={props.price}/>
+           
+            <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Price" />
+               
         </div>
         <div className="form-group">
             <label for="formGroupExampleInput2"></label>
@@ -38,7 +39,6 @@ import { fillData } from '../store/reducers/actions/dataActions';
 const mapStateToProps =(state)=>{
     return{
         options:state.data,
-        price:state.price,
        
     }
 }

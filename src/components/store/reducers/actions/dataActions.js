@@ -8,6 +8,6 @@ export const getData=()=>{
 export const fillData=(data)=>{
     return {
         type:FILL_DATA,
-        payload:data
+        data
     }
 }

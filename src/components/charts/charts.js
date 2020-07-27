@@ -16,8 +16,8 @@ export default class Example extends Component {
 
   render() {
     return (
-     <div className="container chart">
-       <h6>Portfolio <span style={{position:'relative',left:'200px',fontSize:'0.6rem'}}><button>AssetWise</button></span></h6>
+     <div className="container chart" style={{position:'relative'}}>
+       <h6>Portfolio <span style={{position:"absolute",left:'180px',fontSize:'0.6rem'}}><button>AssetWise</button></span></h6>
        <PieChart width={400} height={400} onMouseEnter={this.onPieEnter}>
         
         <Pie

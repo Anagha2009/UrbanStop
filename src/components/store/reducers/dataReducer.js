@@ -15,11 +15,12 @@ const dataReducer =(state=initialState,action) =>{
         }
         case FILL_DATA:
             return{
+                    ...state,
                 results:[
-                    ...state.data.filter(s=>s.scrip===action.payload)
-                ] 
-            
-        }
+                    ...state.data.filter(s=>s.scrip===action.data )
+                ]    
+             }
+
         default : return state
     }
 }

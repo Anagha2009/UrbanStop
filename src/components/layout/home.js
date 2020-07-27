@@ -7,12 +7,10 @@ export default function Home() {
           <div className="row ">
             <div className="col-9 ">
                 <SidePanel/>
-              {/* One of three columns */}
             </div>
             <div className="col-3" >
               <Example/>
-              {/* One of three columns */}
-            </div>
+              </div>
           </div>
         </div>
         

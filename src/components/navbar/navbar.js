@@ -14,7 +14,7 @@ import Sidebar from './sidebar'
         <div>
          <nav className="navbar navbar-light bg-light">
             <span className="navbar-brand mb-0 h1">Logo</span>
-            <i class="fas fa-bars" onClick={this.handleClick}></i>
+            <i className="fas fa-bars" onClick={this.handleClick}></i>
             
          </nav> 
          {this.state.isToggle 

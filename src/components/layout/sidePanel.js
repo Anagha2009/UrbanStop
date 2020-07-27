@@ -103,7 +103,10 @@ class SidePanel extends Component {
                               </div>
                                <div className="col-4" style={{textAlign:'right'}}>
                                <strong>{profitloss}</strong><br/>
-                               <strong>{returnValue}%</strong><br/>
+                               <strong>
+                               <i className="fas fa-sort-up" style={{color:'green',position:'absolute',top:'25px',left:'10px'}}></i>
+                               {returnValue}%
+                               </strong><br/>
                                </div>
                                </div>
                                 {returnValue > 0 

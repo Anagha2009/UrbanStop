@@ -1,4 +1,4 @@
-import {DATA_ACCESS, FILL_DATA} from './types';
+import {DATA_ACCESS} from './types';
 
 export const getData=()=>{
     return{

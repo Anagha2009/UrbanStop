@@ -1,4 +1,4 @@
-import {DATA_ACCESS, FILL_DATA} from './actions/types';
+import {DATA_ACCESS} from './actions/types';
 import data from '../../data/data.json'
 
 const initialState= {

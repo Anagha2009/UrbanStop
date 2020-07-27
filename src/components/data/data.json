@@ -1,16 +1,18 @@
 [
     {    
         "scrip":"ITOT",
-        "price":"283.3",
-        "quantity":"150",
-        "investedAmount":"6736.98",
-         "portfolio":"40%"
+         "name":"Mutual Funds",
+        "price":283.3,
+        "quantity":150,
+        "investedAmount":6736.98,
+         "portfolio":40
     },
     {    
         "scrip":"EFA",
-        "price":"68.9",
-        "quantity":"150",
-        "investedAmount":"4830.21",
-        "portfolio":"20%"
+        "name":"ETF's",
+        "price":68.9,
+        "quantity":150,
+        "investedAmount":4830.21,
+        "portfolio":20
     }
 ]

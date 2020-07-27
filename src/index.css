@@ -4,9 +4,18 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.chart{
+  border:1px solid rgb(231, 229, 229);
+  width:85%;
+  height:60%;
+  border-radius: 2px;
+  box-shadow: 0px 0px 3px 3px rgb(231, 230, 230);
+}
+

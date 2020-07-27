@@ -1,5 +1,7 @@
 import React from 'react'
 import '../layout/side.css'
+import {connect} from "react-redux";
+import { fillData } from '../store/reducers/actions/dataActions';
  const Sidebar= (props)=> {
     return (
         <div>
@@ -8,17 +10,16 @@ import '../layout/side.css'
            <form>
             <select className="custom-select">
                 <option selected>Select...</option>
-                <option value="1">ADDR</option>
-                <option value="2">MFEM</option>
-                <option value="3">JPEM</option>
-                <option value="1">KEMQ</option>
-                <option value="1">KLDW</option>
-                <option value="1">KOIN</option>
-                
+                {props.options.map(option=>{
+                    return(
+                    <option name={option.scrip} onSelect={props.fillData(option.scrip)}>{option.scrip}</option>
+                    )
+                })}
             </select>
          <div className="form-group">
             <label for="formGroupExampleInput"></label>
-            <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Price"/>
+            
+            <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Price" value={props.price}/>
         </div>
         <div className="form-group">
             <label for="formGroupExampleInput2"></label>
@@ -34,7 +35,20 @@ import '../layout/side.css'
         </div>
     )
 }
-export default Sidebar;
+const mapStateToProps =(state)=>{
+    return{
+        options:state.data,
+        price:state.price,
+       
+    }
+}
+const mapDispatchToProps =(dispatch)=>{
+    return{
+       fillData:(data)=>dispatch(fillData(data))
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Sidebar);
 
 
  

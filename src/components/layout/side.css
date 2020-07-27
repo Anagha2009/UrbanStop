@@ -69,13 +69,13 @@ p #span2{
 margin-top: 5px;
 margin-left: 5px;
 }
-button{
+.card5 button{
    font-size: 1.2rem;  
    width:74px;
    color: orange;
    border:2px solid orange
 } 
-button:hover{
+.card5 button:hover{
     background: rgba(230, 227, 227, 0.527);
 }
 i{

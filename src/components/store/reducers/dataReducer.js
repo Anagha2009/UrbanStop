@@ -1,7 +1,10 @@
-import {DATA_ACCESS} from './actions/types';
+import {DATA_ACCESS, FILL_DATA} from './actions/types';
 import data from '../../data/data.json'
 
-const initialState= {data};
+const initialState= {
+    data,
+    results:[]
+};
 
 
 const dataReducer =(state=initialState,action) =>{
@@ -9,6 +12,13 @@ const dataReducer =(state=initialState,action) =>{
         case DATA_ACCESS:
             return{
             ...state
+        }
+        case FILL_DATA:
+            return{
+                results:[
+                    ...state.data.filter(s=>s.scrip===action.payload)
+                ] 
+            
         }
         default : return state
     }

@@ -80,7 +80,7 @@ class SidePanel extends Component {
                               </div>
                                <div className="col-4" style={{textAlign:'right'}}>
                                <strong>${marketValue}</strong><br/>
-                               <strong>{info.portfolio}</strong><br/>
+                               <strong>{info.portfolio}%</strong><br/>
                                </div>
                                </div>
                                <div className="row">
@@ -103,20 +103,21 @@ class SidePanel extends Component {
                               </div>
                                <div className="col-4" style={{textAlign:'right'}}>
                                <strong>{profitloss}</strong><br/>
-                               <strong>{returnValue}</strong><br/>
+                               <strong>{returnValue}%</strong><br/>
                                </div>
                                </div>
                                 
                                <div className="row">
+                                   {/* if negative values appear*/}
                                    <div className="col left-progress">                               
                                    <div className="progress justify-content-end">
-                                        <div className="progress-bar " role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div className="progress-ba" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                    </div>
 
                                     <div className="col right-progress">
                                     <div className="progress">
-                                        <div className="progress-bar bg-success" role="progressbar" style={{width: {marketValue}}} aria-valuenow={marketValue} aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div className="progress-bar bg-success" role="progressbar" style={{width: marketValue}} aria-valuenow={marketValue} aria-valuemin="0" aria-valuemax="100"></div>
                                      </div>
 
                                     </div>

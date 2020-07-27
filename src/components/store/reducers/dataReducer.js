@@ -13,13 +13,6 @@ const dataReducer =(state=initialState,action) =>{
             return{
             ...state
         }
-        case FILL_DATA:
-            return{
-                    ...state,
-                results:[
-                    ...state.data.filter(s=>s.scrip===action.data )
-                ]    
-             }
 
         default : return state
     }

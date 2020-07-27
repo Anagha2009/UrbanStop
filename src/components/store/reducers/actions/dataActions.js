@@ -5,9 +5,4 @@ export const getData=()=>{
         type:DATA_ACCESS
     }
 }
-export const fillData=(data)=>{
-    return {
-        type:FILL_DATA,
-        data
-    }
-}
+

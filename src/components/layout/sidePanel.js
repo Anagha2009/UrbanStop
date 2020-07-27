@@ -25,10 +25,10 @@ class SidePanel extends Component {
             {data && data.map(info=>{
                 const marketValue= this.marketCalc(info.price,info.quantity)
                 const profitloss = this.profitLossCalc(marketValue,info.investedAmount)
-                const returnValue=this.returnCalc(profitloss,info.investedAmount)
-
+                const returnValue= this.returnCalc(profitloss,info.investedAmount)
+                const num=Number(returnValue)
                 return(
-                    <div key={info.scrip}>
+                    <div className="container-fluid"key={info.scrip}>
                     <div className="row">
                         <div className="col-lg-2">
                          <div className="card">
@@ -106,23 +106,41 @@ class SidePanel extends Component {
                                <strong>{returnValue}%</strong><br/>
                                </div>
                                </div>
-                                
+                                {returnValue > 0 
+                                ?
                                <div className="row">
-                                   {/* if negative values appear*/}
-                                   <div className="col left-progress">                               
-                                   <div className="progress justify-content-end">
-                                        <div className="progress-ba" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                   </div>
+                                <div className="col left-progress">                               
+                                <div className="progress justify-content-end">
+                                     <div className="progress-bar" role="progressbar" aria-valuenow='25' aria-valuemin="0" aria-valuemax="100"></div>
+                                 </div>
+                                </div>
 
-                                    <div className="col right-progress">
-                                    <div className="progress">
-                                        <div className="progress-bar bg-success" role="progressbar" style={{width: marketValue}} aria-valuenow={marketValue} aria-valuemin="0" aria-valuemax="100"></div>
-                                     </div>
+                                 <div className="col right-progress">
+                                 <div className="progress">
+                                     <div className="progress-bar bg-success" role="progressbar" style={{width:num}} aria-valuenow={num} aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
 
-                                    </div>
-                                    
-                               </div>
+                                 </div>
+                                 
+                            </div>
+                            :<div className="row">
+                            {/* if negative values appear*/}
+                            <div className="col left-progress">                               
+                            <div className="progress justify-content-end">
+                                 <div className="progress-bar bg-danger" role="progressbar" style={{width:num}} aria-valuenow={num} aria-valuemin="0" aria-valuemax="100"></div>
+                             </div>
+                            </div>
+
+                             <div className="col right-progress">
+                             <div className="progress">
+                                 <div className="progress-bar" role="progressbar" aria-valuenow='25' aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+
+                             </div>
+                             
+                        </div>
+                                }
+                               
                                
                      
                        </div>
